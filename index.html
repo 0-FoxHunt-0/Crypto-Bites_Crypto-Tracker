@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- LINK TO ONLINE WEBPAGE: https://project2-cryptobyte-ns.firebaseapp.com/ -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.1.js"></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    
+    <!-- JavaScript Bundle with Popper -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+    ></script>
+    <script defer src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script
+    defer
+    src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <title>Crypto-Bites</title>
+  </head>
+  <body>
+    <div id="welcomeScreen"></div>
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Crypto-Bites</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                id="currenciesLink"
+                href="javascript:void(0)"
+                class="nav-link"
+                aria-current="page"
+                >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a id="reportsLink" class="nav-link"
+                href="javascript:void(0)"
+                >Reports</a
+                >
+              </li>
+              <li class="nav-item">
+                <a id="aboutLink" class="nav-link"
+                href="javascript:void(0)"
+                >About</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search" id="searchForm">
+            <div id="searchErrorsDiv"></div>
+            <input
+              class="form-control me-2"
+              id="coinSearch"
+              type="search text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" id="searchButton" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div id="modalContainer" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">You selected one coin too many!</h5>
+          </div>
+          <div id="modalBodyContent">
+            <div id="modalBodyInstruction"></div>
+            <div id="modalBody"></div>
+          </div>
+          <div class="modal-footer">
+            <button id="keepChoicesBtn" type="button">
+              Keep current coins
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyBackground">
+      <!-- Error container -->
+      <div id="container" class="container-fluid">
+        <div id="unselactenCoinsErrorDiv"></div>
+        <div id="unselectedCoinsBtnDiv"></div>
+        <div class="row" id="mainContainer"></div>
+      </div>
+
+      <div id="contentDiv">
+        <div id="loader"></div>
+      </div>
+    </div>
+  </body>
+</html>

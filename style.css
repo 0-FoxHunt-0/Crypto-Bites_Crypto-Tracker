@@ -1,0 +1,289 @@
+/* LINK TO ONLINE WEBPAGE: https://project2-cryptobyte-ns.firebaseapp.com/ */
+
+
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+}
+
+#contentDiv {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    margin-left: 9%;
+}
+
+.myCard {
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
+    padding: 10px;
+    background-color: #353333;
+    color: white;
+    position: relative;
+}
+
+.coinSymbol,
+.coinName {
+    margin-bottom: 5px;
+    width: 240px;
+}
+
+.navbar-brand {
+    font-family: Buffalo;
+    font-size: 25px;
+}
+
+.navbar-nav {
+    align-items: center;
+    font-size: 20px;
+}
+
+.in {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: #353333;
+    border-radius: 5px solid;
+    align-items: center;
+    margin-left: 5.5%;
+    margin-bottom: 10px;
+    color: #F4DB7D;
+}
+
+.myCard button {
+    margin-bottom: 10px;
+}
+
+.cardImg {
+    margin-top: 2%;
+    width: 50px;
+    height: 50px;
+}
+
+.bodyBackground {
+    background-image: url(images/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: auto;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+
+#welcomeScreen {
+    background-image: url(images/Crypto-bites.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: auto;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+
+
+.moreInfo {
+    background-color: #BCFD4C;
+    border: none;
+    color: black;
+}
+
+.moreInfo:hover {
+    background-color: #72a120d6;
+}
+
+.moreInfo:active {
+    background-color: #72a120d6;
+}
+
+.checkbox {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 1;
+    border: none;
+    background-color: #BCFD4C;
+    box-shadow: none;
+}
+
+.checkbox:checked {
+    background-color: #72a120d6;
+}
+
+.checkbox:focus {
+    box-shadow: none;
+}
+
+#loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 7px solid transparent;
+    border-radius: 50%;
+    border-top: 7px solid black;
+    border-bottom-left-radius: 7px solid black;
+    border-right: 7px solid black;
+    border-left: 7px solid black;
+    width: 200px;
+    height: 200px;
+    -webkit-animation: spin 1s linear infinite;
+    /* Safari */
+    animation: spin 1s linear infinite;
+}
+
+/* modal */
+
+.modal-title {
+    -webkit-text-stroke: 1px black;
+    font-weight: bold
+}
+
+#modalBodyInstruction {
+    letter-spacing: 1px;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: medium;
+}
+
+.modal-content {
+    background-image: url(images/modal-img.jpg);
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    background-position-x: 0%;
+    background-position-y: 30%;
+    color: white;
+}
+
+#modalContainer {
+    background-color: rgba(243, 239, 239, 0.4);
+}
+
+.modal-active {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+}
+
+.modalSwitch {
+    position: relative;
+    display: inline-block;
+    width: 33px;
+    height: 18px;
+}
+
+.selectedCoinName {
+    margin-top: 10px;
+}
+
+.contentCard {
+    border-radius: 5px;
+    background-color: rgba(52, 57, 66, 0.8);
+    color: rgb(253, 249, 249);
+    text-align: center;
+    width: 80px;
+    height: 70px;
+}
+
+#modalBody {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+#keepChoicesBtn {
+    border: 1px solid rgba(125, 125, 141, 0.7);
+    border-radius: 3px;
+    outline: none;
+    background-color: rgb(34, 32, 32);
+    color: white;
+    box-shadow: 1px 1px 5px rgb(125, 125, 141)
+}
+
+#keepChoicesBtn:hover {
+    background-color: rgb(24, 23, 22);
+    color: wheat;
+    opacity: 1;
+}
+
+.slider.round {
+    border-radius: 34px;
+    outline: none;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* container */
+
+#container {
+    background-color: transparent;
+}
+
+#mainContainer {
+    margin-top: 3%;
+    margin-left: 9%;
+    align-items: baseline;
+}
+
+#searchErrorsDiv {
+    color: red;
+    display: block;
+    margin-right: 5px;
+}
+
+#unselactenCoinsErrorDiv {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-text-stroke: 0.7px black;
+    margin-left: 10%;
+
+}
+
+#unselectCoinsBtn {
+    margin-left: 10%;
+    margin-top: 10px;
+    background-color: rgb(53, 53, 52);
+    color: white;
+    border: 0.5px solid rgb(81, 81, 97);
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 1px 1px 3px rgb(75, 75, 80);
+    opacity: 0.8;
+}
+
+#unselectCoinsBtn:hover {
+    color: rgb(138, 130, 114);
+}
+
+#unselectCoinsBtn:active {
+    color: rgb(179, 174, 174);
+    background-color: rgb(85, 90, 97);
+}
+
+#aboutDiv{
+    width: 800px;
+    color: white;
+    background-color: rgba(26, 25, 24, 0.9);
+    padding: 20px;
+    letter-spacing: 1px;
+    background-size: 280px;
+    background-repeat: no-repeat;
+    background-position-x: 110%;
+    background-position-y: 120%;
+}
+
+.bolderTextAboutPage{
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.active {
+    color: white;
+}
