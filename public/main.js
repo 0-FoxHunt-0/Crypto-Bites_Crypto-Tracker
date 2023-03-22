@@ -57,7 +57,7 @@
 
         else {
             $("#loader").show()
-            let json = JSON.stringify(await getJson("https://api.coingecko.com/api/v3/coins"))
+            let json = JSON.stringify(await getJson("https://api.coingecko.com/api/v3/coins/"))
             localStorage.setItem('currenciesInfo', json)
             $("#loader").hide()
         }
@@ -114,21 +114,15 @@
     function checkBoxState() {
         let coinSymbol;
         $(".checkBoxState").on("change", this, function () {
-            coinSymbol = this.id
-            console.log(this)
-            console.log(coinSymbol)
             if (this.checked) {
                 onToggleSwitchClicked(this, this.id)
             }
-            console.log(this.checked === false)
-            console.log(selectedCoins)
             if (this.checked === false) {
                 selectedCoins.forEach(symbol => {
                     if (symbol === coinSymbol)
                         selectedCoins.splice(coinSymbol, 1)
                 })
             }
-            console.log(selectedCoins)
             resetErrorsDivs()
         })
     }
@@ -242,7 +236,7 @@
             function getData() {
                 let url = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${selectedCoins[0]},${selectedCoins[1]},${selectedCoins[2]},${selectedCoins[3]},${selectedCoins[4]}&tsyms=USD`
                 $.get(url).then((coinsValue) => {
-                    $("#contentDiv").html(`<div id="chartContainer" style="height: 300px; width: 80%;"></div>`);
+                    $("#contentDiv").attr("style", "margin: 0;").addClass("chart").html(`<div id="chartContainer" style="height: 50%; width: 50%; align-self: center; vertical-align: middle;"></div>`);
 
                     let dateNow = new Date();
                     let coinToShowOnGraph = 1;
@@ -353,8 +347,6 @@
 
     function isEmptySelectedCoinsArray() {
         if (selectedCoins.length == 0) {
-            console.log(selectedCoins)
-            console.log(selectedCoins.length == 0)
             return true;
         }
 
@@ -376,7 +368,6 @@
             }
 
             if (isEmptyField(coinSearch)) {
-                console.log(isEmptyField(coinSearch))
                 $("#searchErrorsDiv").html("Please enter a coin name");
                 console.log("Error")
             }
@@ -393,7 +384,6 @@
                 if (operator === true) {
                     $(".myCard").hide()
                     searchPrintArray.forEach(coin => {
-                        console.log(coin)
                         $(`#card${coin.symbol.toUpperCase()}`).show()
                     })
 

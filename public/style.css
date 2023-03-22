@@ -66,9 +66,10 @@ html {
     background-image: url(images/background.jpg);
     background-attachment: fixed;
     background-position: center;
-    background-repeat: repeat;
-    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
     perspective: 2px;
@@ -78,9 +79,10 @@ html {
     background-image: url(images/Crypto-bites.png);
     background-attachment: fixed;
     background-position: center;
-    background-repeat: repeat;
-    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
     perspective: 2px;
@@ -267,7 +269,7 @@ html {
     background-color: rgb(85, 90, 97);
 }
 
-#aboutDiv{
+#aboutDiv {
     width: 800px;
     color: white;
     background-color: rgba(26, 25, 24, 0.9);
@@ -279,11 +281,19 @@ html {
     background-position-y: 120%;
 }
 
-.bolderTextAboutPage{
+.bolderTextAboutPage {
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 .active {
     color: white;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
